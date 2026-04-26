@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-  <title>📐 数字全息·微小位移 | 知识图谱</title>
+  <title>📐 数字全息·微小位移 | 知识总结</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -85,7 +85,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     .nav-tab {
@@ -125,6 +125,32 @@
 
     .nav-tab.active i {
       color: white;
+    }
+
+    /* 全局图片展示区域 */
+    .global-image-container {
+      background: white;
+      border-radius: 24px;
+      padding: 20px;
+      margin-bottom: 24px;
+      box-shadow: 0 8px 20px rgba(0,20,40,0.06);
+      border: 1px solid rgba(110,140,200,0.12);
+      text-align: center;
+    }
+
+    .global-image-container img {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 16px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .global-image-caption {
+      margin-top: 12px;
+      color: #5a7794;
+      font-size: 0.95rem;
+      font-weight: 500;
     }
 
     /* 章节卡片 */
@@ -303,6 +329,10 @@
       color: white;
     }
 
+    .compare-card.highlight p {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
     .compare-card h4 {
       margin-bottom: 16px;
       color: #1a3e60;
@@ -347,26 +377,18 @@
       color: #5a7794;
       font-size: 0.95rem;
     }
-
-    .hidden-section {
-      display: none;
-    }
-
-    .active-section {
-      display: block;
-    }
   </style>
 </head>
 <body>
 <div class="knowledge-wrapper">
-  
+
   <!-- 头部 -->
   <div class="header-card">
     <h1>
       <i class="fas fa-project-diagram"></i>
       数字全息·微小位移测量
       <span style="margin-left: auto; font-size: 1rem; opacity: 0.8; background: rgba(255,255,255,0.15); padding: 8px 18px; border-radius: 40px;">
-        <i class="fas fa-graduation-cap"></i> 知识图谱
+        <i class="fas fa-graduation-cap"></i> 知识总结
       </span>
     </h1>
     <div class="header-sub">
@@ -391,10 +413,31 @@
     <button class="nav-tab" data-section="application"><i class="fas fa-globe"></i> 应用领域</button>
   </div>
 
-  <!-- ========== 内容区域 ========== -->
+  <!-- ========== 全局图片展示区域 ========== -->
+  <div class="global-image-container">
+    <img src="images/2.jpg" alt="建模图jpg" onerror="this.style.display='none'; this.parentNode.querySelector('.global-image-caption').innerHTML='⚠️ 图片未找到，请确认 images/2.png 已上传';">
+    <div class="global-image-caption">
+      <i class="fas fa-image"></i> 数字全息测量微小位移 · 系统示意图
+    </div>
+  </div>
 
-  <!-- 总览 -->
-  <div id="section-overview" class="section-card active-section">
+  <!-- 动态内容区域 -->
+  <div id="dynamicContent"></div>
+
+  <!-- 全局总览区域（非总览标签时显示在下方） -->
+  <div id="globalOverview" style="display:none;"></div>
+
+  <div class="footer-note">
+    <i class="far fa-copy"></i> 数字全息测量微小位移 · 知识总结 · 基于微课与PPT整理<br>
+    <span style="opacity: 0.7;">点击上方标签切换模块 | 建议配合微课视频与随堂练习使用</span>
+  </div>
+</div>
+
+<!-- ========== 所有板块内容模板（隐藏） ========== -->
+<div style="display:none;">
+
+  <!-- 总览模板 -->
+  <div id="template-overview" class="section-card">
     <div class="section-header">
       <div class="section-icon"><i class="fas fa-compass"></i></div>
       <div class="section-title">知识体系总览</div>
@@ -417,7 +460,6 @@
         <p>放大率λ准确性决定精度；样品表面质量影响极大；X/Y方向一致性好；系统可满足MEMS器件检测等应用需求。</p>
       </div>
     </div>
-    <!-- 记忆口诀 -->
     <div class="memory-box">
       <h3><i class="fas fa-brain"></i> 📖 核心记忆口诀</h3>
       <div class="memory-text">
@@ -431,8 +473,8 @@
     </div>
   </div>
 
-  <!-- 核心公式 -->
-  <div id="section-formula" class="section-card hidden-section">
+  <!-- 核心公式模板 -->
+  <div id="template-formula" class="section-card">
     <div class="section-header">
       <div class="section-icon"><i class="fas fa-square-root-alt"></i></div>
       <div class="section-title">核心公式体系</div>
@@ -455,8 +497,8 @@
     </div>
   </div>
 
-  <!-- 实验装置 -->
-  <div id="section-setup" class="section-card hidden-section">
+  <!-- 实验装置模板 -->
+  <div id="template-setup" class="section-card">
     <div class="section-header">
       <div class="section-icon"><i class="fas fa-microscope"></i></div>
       <div class="section-title">实验光路系统（从左到右）</div>
@@ -482,8 +524,8 @@
     </table>
   </div>
 
-  <!-- 操作流程 -->
-  <div id="section-steps" class="section-card hidden-section">
+  <!-- 操作流程模板 -->
+  <div id="template-steps" class="section-card">
     <div class="section-header">
       <div class="section-icon"><i class="fas fa-list-ol"></i></div>
       <div class="section-title">实验七步法</div>
@@ -499,8 +541,8 @@
     </div>
   </div>
 
-  <!-- 性能指标 -->
-  <div id="section-performance" class="section-card hidden-section">
+  <!-- 性能指标模板 -->
+  <div id="template-performance" class="section-card">
     <div class="section-header">
       <div class="section-icon"><i class="fas fa-chart-bar"></i></div>
       <div class="section-title">系统性能参数</div>
@@ -517,8 +559,8 @@
     </table>
   </div>
 
-  <!-- 误差分析 -->
-  <div id="section-error" class="section-card hidden-section">
+  <!-- 误差分析模板 -->
+  <div id="template-error" class="section-card">
     <div class="section-header">
       <div class="section-icon"><i class="fas fa-exclamation-triangle"></i></div>
       <div class="section-title">误差来源与不确定度</div>
@@ -534,8 +576,8 @@
     </div>
   </div>
 
-  <!-- 技术优势 -->
-  <div id="section-advantage" class="section-card hidden-section">
+  <!-- 技术优势模板 -->
+  <div id="template-advantage" class="section-card">
     <div class="section-header">
       <div class="section-icon"><i class="fas fa-star"></i></div>
       <div class="section-title">创新优势对比</div>
@@ -556,8 +598,8 @@
     </div>
   </div>
 
-  <!-- 应用领域 -->
-  <div id="section-application" class="section-card hidden-section">
+  <!-- 应用领域模板 -->
+  <div id="template-application" class="section-card">
     <div class="section-header">
       <div class="section-icon"><i class="fas fa-globe"></i></div>
       <div class="section-title">应用领域全景</div>
@@ -574,29 +616,45 @@
     </div>
   </div>
 
-  <div class="footer-note">
-    <i class="far fa-copy"></i> 数字全息测量微小位移 · 知识图谱 · 基于微课与PPT整理<br>
-    <span style="opacity: 0.7;">点击上方标签切换模块 | 建议配合微课视频与随堂练习使用</span>
-  </div>
 </div>
 
 <script>
   (function() {
     const tabs = document.querySelectorAll('.nav-tab');
-    const sections = {
-      overview: document.getElementById('section-overview'),
-      formula: document.getElementById('section-formula'),
-      setup: document.getElementById('section-setup'),
-      steps: document.getElementById('section-steps'),
-      performance: document.getElementById('section-performance'),
-      error: document.getElementById('section-error'),
-      advantage: document.getElementById('section-advantage'),
-      application: document.getElementById('section-application')
+    const dynamicContent = document.getElementById('dynamicContent');
+    const globalOverview = document.getElementById('globalOverview');
+
+    const templates = {
+      overview: document.getElementById('template-overview'),
+      formula: document.getElementById('template-formula'),
+      setup: document.getElementById('template-setup'),
+      steps: document.getElementById('template-steps'),
+      performance: document.getElementById('template-performance'),
+      error: document.getElementById('template-error'),
+      advantage: document.getElementById('template-advantage'),
+      application: document.getElementById('template-application')
     };
 
     function switchSection(sectionId) {
-      Object.values(sections).forEach(s => s.classList.add('hidden-section'));
-      sections[sectionId].classList.remove('hidden-section');
+      dynamicContent.innerHTML = '';
+      const template = templates[sectionId];
+      if (!template) return;
+      const clone = template.cloneNode(true);
+      clone.removeAttribute('id');
+
+      if (sectionId === 'overview') {
+        dynamicContent.appendChild(clone);
+        globalOverview.style.display = 'none';
+        globalOverview.innerHTML = '';
+      } else {
+        dynamicContent.appendChild(clone);
+        const overviewClone = templates.overview.cloneNode(true);
+        overviewClone.removeAttribute('id');
+        globalOverview.innerHTML = '';
+        globalOverview.appendChild(overviewClone);
+        globalOverview.style.display = 'block';
+      }
+
       tabs.forEach(t => t.classList.remove('active'));
       document.querySelector(`[data-section="${sectionId}"]`).classList.add('active');
     }
@@ -608,7 +666,6 @@
       });
     });
 
-    // 默认显示总览
     switchSection('overview');
   })();
 </script>
