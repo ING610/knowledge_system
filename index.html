@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-  <title>📐 数字全息·微小位移 | 知识总结</title>
+  <title>📐 数字全息技术教学 | 知识总结</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -386,7 +386,7 @@
   <div class="header-card">
     <h1>
       <i class="fas fa-project-diagram"></i>
-      数字全息·微小位移测量
+      数字全息技术教学
       <span style="margin-left: auto; font-size: 1rem; opacity: 0.8; background: rgba(255,255,255,0.15); padding: 8px 18px; border-radius: 40px;">
         <i class="fas fa-graduation-cap"></i> 知识总结
       </span>
@@ -396,8 +396,8 @@
       <span><i class="fas fa-microchip"></i> MEMS·生物医学·精密制造</span>
     </div>
     <div class="formula-hero">
-      <span>Δx = Δp · k / λ</span>
-      <small>k = 3.45 μm | λ ≈ 1</small>
+      <span>Δx = Δp · k / M</span>
+      <small>k = 3.45 μm | M ≈ 1</small>
     </div>
   </div>
 
@@ -413,11 +413,11 @@
     <button class="nav-tab" data-section="application"><i class="fas fa-globe"></i> 应用领域</button>
   </div>
 
-  <!-- ========== 全局图片展示区域（已修复） ========== -->
+  <!-- ========== 全局图片展示区域 ========== -->
   <div class="global-image-container">
-    <img src="建模图jpg.jpg" alt="数字全息微小位移测量示意图" onerror="this.style.display='none'; this.parentNode.querySelector('.global-image-caption').innerHTML='⚠️ 图片未找到，请确认 建模图jpg.jpg 已上传到仓库根目录';">
+    <img src="建模图jpg.jpg" alt="数字全息技术教学示意图" onerror="this.style.display='none'; this.parentNode.querySelector('.global-image-caption').innerHTML='⚠️ 图片未找到，请确认 建模图jpg.jpg 已上传到仓库根目录';">
     <div class="global-image-caption">
-      <i class="fas fa-image"></i> 数字全息测量微小位移 · 系统示意图
+      <i class="fas fa-image"></i> 数字全息技术教学 · 系统示意图
     </div>
   </div>
 
@@ -428,7 +428,7 @@
   <div id="globalOverview" style="display:none;"></div>
 
   <div class="footer-note">
-    <i class="far fa-copy"></i> 数字全息测量微小位移 · 知识总结 · 基于微课与PPT整理<br>
+    <i class="far fa-copy"></i> 数字全息技术教学 · 知识总结 · 基于微课与PPT整理<br>
     <span style="opacity: 0.7;">点击上方标签切换模块 | 建议配合微课视频与随堂练习使用</span>
   </div>
 </div>
@@ -457,7 +457,7 @@
       </div>
       <div class="knowledge-item">
         <h4><i class="fas fa-lightbulb" style="color:#1a4a7a;"></i> 核心结论</h4>
-        <p>放大率λ准确性决定精度；样品表面质量影响极大；X/Y方向一致性好；系统可满足MEMS器件检测等应用需求。</p>
+        <p>放大率M准确性决定精度；样品表面质量影响极大；X/Y方向一致性好；系统可满足MEMS器件检测等应用需求。</p>
       </div>
     </div>
     <div class="memory-box">
@@ -481,7 +481,7 @@
     </div>
     <div style="text-align: center; margin-bottom: 30px;">
       <div style="background: #1a3e60; display: inline-block; padding: 20px 48px; border-radius: 60px; color: white; margin-bottom: 16px;">
-        <span style="font-size: 2.8rem; font-weight: 700; font-family: 'Courier New', monospace;">Δx = Δp × k / λ</span>
+        <span style="font-size: 2.8rem; font-weight: 700; font-family: 'Courier New', monospace;">Δx = Δp × k / M</span>
       </div>
       <p style="color: #3a5f7a; font-size: 1.1rem;">公式本质：基于相似三角形原理，将像素空间映射到物理空间</p>
     </div>
@@ -490,10 +490,10 @@
       <tr><td><strong>Δx</strong></td><td>实际位移量</td><td>待测物理量，单位 μm 或 mm</td></tr>
       <tr><td><strong>Δp</strong></td><td>像素位移量</td><td>在电脑图像上观测到的移动像素数</td></tr>
       <tr><td><strong>k</strong></td><td>像元物理尺寸</td><td>3.45 μm/pixel（相机固定参数）</td></tr>
-      <tr><td><strong>λ</strong></td><td>系统放大率（几何放大率）</td><td>λ = x₂/x₁ ≈ 1</td></tr>
+      <tr><td><strong>M</strong></td><td>系统放大率（几何放大率）</td><td>M = x₂/x₁ ≈ 1</td></tr>
     </table>
     <div style="margin-top: 24px; background: #e8f0fe; padding: 20px; border-radius: 20px;">
-      <p><i class="fas fa-key" style="color: #1a4a7a; margin-right: 10px;"></i> <strong>关键理解：</strong>λ的准确性是决定测量精度的第一因素。实际测量中需精确标定放大率。</p>
+      <p><i class="fas fa-key" style="color: #1a4a7a; margin-right: 10px;"></i> <strong>关键理解：</strong>M的准确性是决定测量精度的第一因素。实际测量中需精确标定放大率。</p>
     </div>
   </div>
 
@@ -537,7 +537,7 @@
       <div class="step-item"><div class="step-num">4</div><div class="step-desc">拍初始图</div><div class="step-detail">样品原点，选取特征点</div></div>
       <div class="step-item"><div class="step-num">5</div><div class="step-desc">平移样品</div><div class="step-detail">移动已知距离，拍位移图</div></div>
       <div class="step-item"><div class="step-num">6</div><div class="step-desc">计算Δp</div><div class="step-detail">找特征点新位置，数像素</div></div>
-      <div class="step-item"><div class="step-num">7</div><div class="step-desc">代入公式</div><div class="step-detail">Δx=Δp×3.45/λ，对比验证</div></div>
+      <div class="step-item"><div class="step-num">7</div><div class="step-desc">代入公式</div><div class="step-detail">Δx=Δp×3.45/M，对比验证</div></div>
     </div>
   </div>
 
@@ -568,11 +568,11 @@
     <div class="knowledge-grid">
       <div class="knowledge-item"><h4><i class="fas fa-cog"></i> 机械误差</h4><p>机械回程差、平移台定位精度、样品装夹稳定性</p></div>
       <div class="knowledge-item"><h4><i class="fas fa-temperature-high"></i> 环境误差</h4><p>环境振动、温度漂移、气流扰动</p></div>
-      <div class="knowledge-item"><h4><i class="fas fa-wave-square"></i> 光学误差</h4><p>放大率λ标定不准、杂散光干扰、像素量化误差</p></div>
+      <div class="knowledge-item"><h4><i class="fas fa-wave-square"></i> 光学误差</h4><p>放大率M标定不准、杂散光干扰、像素量化误差</p></div>
       <div class="knowledge-item"><h4><i class="fas fa-balance-scale"></i> 不确定度评定</h4><p>A类（统计重复性）· B类（仪器/环境）· 合成· 扩展(k=2)</p></div>
     </div>
     <div style="margin-top: 20px; background: #fff3e0; padding: 20px; border-radius: 20px;">
-      <p><i class="fas fa-lightbulb" style="color:#b85b14; margin-right: 10px;"></i> <strong>关键结论：</strong>放大率λ的准确性是决定精度的第一因素；样品表面质量对测量结果影响极大。</p>
+      <p><i class="fas fa-lightbulb" style="color:#b85b14; margin-right: 10px;"></i> <strong>关键结论：</strong>放大率M的准确性是决定精度的第一因素；样品表面质量对测量结果影响极大。</p>
     </div>
   </div>
 
